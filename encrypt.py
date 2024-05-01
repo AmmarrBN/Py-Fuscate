@@ -151,6 +151,10 @@ def main():
                     time.sleep(0.1)
                     pbar.update(1)
     with open(args.output, 'w') as output:
+        output.write(f"main=(")
+        for _ in range(80000):
+            output.write('"requests.Session = Error","requests.Session = Error"\n')
+        output.write(")\n")
         output.write(f'# Compile By AmmarrBN\n# https://github.com/AmmarrBN/Py-Fuscate\n# Make Sure You\'re Running The Program With {PYTHON_VERSION} Otherwise It May Crash\n# To Check Your Python Version Run "python -V" Command\ntry:\n\t{encoded}\nexcept KeyboardInterrupt:\n\tpass')
     print(LIGRE + '\t[+] encoding successful!\n\tsaved as '.title() + args.output)
 if __name__ == '__main__':
